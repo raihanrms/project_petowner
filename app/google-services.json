@@ -1,0 +1,114 @@
+{
+  "project_info": {
+    "project_number": "398393497433",
+    "firebase_url": "https://raihanfirebase-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "raihanfirebase",
+    "storage_bucket": "raihanfirebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:398393497433:android:05bef4c48ee575eb619e48",
+        "android_client_info": {
+          "package_name": "com.example.fetchprofileandhirenotifications"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "398393497433-44gb513kbkip6uafu853bdveoekspljn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fetchprofileandhirenotifications",
+            "certificate_hash": "84d00ad2b240a9992b5b9041f9a61b021f9009b7"
+          }
+        },
+        {
+          "client_id": "398393497433-qe9bnv0vc0ck22555ko7tgnm5b0cgd5c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsnUQV6NAmTna4T-318EsYyrPAFM9G76U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "398393497433-qe9bnv0vc0ck22555ko7tgnm5b0cgd5c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:398393497433:android:f2044fd551a37ac4619e48",
+        "android_client_info": {
+          "package_name": "com.example.petowner"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "398393497433-1irev4pe5tanf7q7o8fgfls7jvnqncka.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.petowner",
+            "certificate_hash": "84d00ad2b240a9992b5b9041f9a61b021f9009b7"
+          }
+        },
+        {
+          "client_id": "398393497433-qe9bnv0vc0ck22555ko7tgnm5b0cgd5c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsnUQV6NAmTna4T-318EsYyrPAFM9G76U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "398393497433-qe9bnv0vc0ck22555ko7tgnm5b0cgd5c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:398393497433:android:1d75f401762ce649619e48",
+        "android_client_info": {
+          "package_name": "com.example.petsitting"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "398393497433-qe9bnv0vc0ck22555ko7tgnm5b0cgd5c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsnUQV6NAmTna4T-318EsYyrPAFM9G76U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "398393497433-qe9bnv0vc0ck22555ko7tgnm5b0cgd5c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
