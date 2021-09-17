@@ -1,5 +1,5 @@
 package com.example.petowner;
-
+/* Model class */
 public class All_UserMember {
     String full_name;
     String phone_no;

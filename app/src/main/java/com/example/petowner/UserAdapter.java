@@ -1,6 +1,7 @@
 package com.example.petowner;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
+import java.util.HashMap;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -53,13 +55,65 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.Viewholder>{
         holder.full_name.setText(allUserMember.getFull_name());
         holder.address.setText(allUserMember.getAddress());
 
-        Picasso.get().load(allUserMember.getUrl()).placeholder(R.mipmap.ic_launcher).into(holder.imageProfile);
+        // if the user doesn't have an image
+        if (allUserMember.getUrl().equals("default")) {
+            } else {
+                    Picasso.get().load(allUserMember.getUrl()).placeholder(R.mipmap.ic_launcher).into(holder.imageProfile);
+            }
+
         isHired(allUserMember.getUid(), holder.btnhire);
 
         if (allUserMember.getUid().equals(firebaseUser.getUid())){
             holder.btnhire.setVisibility(View.GONE);
         }
+        // Follow
+        holder.btnhire.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                if (holder.btnhire.getText().toString().equals(("Hire"))){
+                    // inside db a hire branch would be created
+                    FirebaseDatabase.getInstance().getReference().child("Hire").
+                            child((firebaseUser.getUid())).child("Hired").
+                            child(allUserMember.getUid()).setValue(true);
+                    // another sub branch will have user id whom we hired and for the follower
+                    // and uid for the user would be kept
+                    FirebaseDatabase.getInstance().getReference().child("Hire").
+                            child(allUserMember.getUid()).child("Hired").
+                            child(firebaseUser.getUid()).setValue(true);
 
+                    addNotification(allUserMember.getUid());
+
+                } else {
+                    // To remove him/her from hired
+                    FirebaseDatabase.getInstance().getReference().child("Hire").
+                            child((firebaseUser.getUid())).child("Hired").
+                            child(allUserMember.getUid()).removeValue();
+                    FirebaseDatabase.getInstance().getReference().child("Hire").
+                            child(allUserMember.getUid()).child("Hired").
+                            child(firebaseUser.getUid()).removeValue();
+                }
+            }
+        });
+        // To attach Sitter's profile with the owner profile fragment
+        // when full name is touched
+       holder.full_name.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               Intent intent = new Intent(mContext, UserAdapter.class);
+               intent.putExtra("uid", allUserMember.getUid());
+               mContext.startActivity(intent);
+           }
+       });
+
+        // when clicked on image_profile
+        holder.imageProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, UserAdapter.class);
+                intent.putExtra("uid", allUserMember.getUid());
+                mContext.startActivity(intent);
+            }
+        });
     }
 
     private void isHired(final String id, Button btnhire) {
@@ -92,6 +146,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.Viewholder>{
         public CircleImageView imageProfile;
         public TextView full_name;
         public TextView address;
+        public TextView available;
         public Button btnhire;
 
         public Viewholder(@NonNull View itemView) {
@@ -100,7 +155,19 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.Viewholder>{
             imageProfile = itemView.findViewById(R.id.image_profile);
             full_name = itemView.findViewById(R.id.full_name);
             address = itemView.findViewById(R.id.address);
+            available = itemView.findViewById(R.id.available);
             btnhire = itemView.findViewById(R.id.btn_hire);
         }
     }
+
+    private void addNotification(String allUserMemberUid){
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("userId", allUserMemberUid);
+        map.put("text", "Got Hired");
+        map.put("Hire", true);
+
+        FirebaseDatabase.getInstance().getReference().child("Notifications").child(firebaseUser.getUid()).push().setValue(map);
+
+    }
+
 }

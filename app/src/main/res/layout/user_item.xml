@@ -27,7 +27,7 @@
             android:text="Full Name"
             android:maxLines="1"
             android:textStyle="bold"
-            android:textColor="@color/design_default_color_primary_dark"/>
+            android:textColor="@color/black"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -36,7 +36,16 @@
             android:text="Address"
             android:maxLines="1"
             android:textStyle="bold"
-            android:textColor="@color/design_default_color_primary_dark"/>
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/available"
+            android:text="Available"
+            android:maxLines="1"
+            android:textStyle="italic"
+            android:textColor="@color/teal_700"/>
 
     </LinearLayout>
 

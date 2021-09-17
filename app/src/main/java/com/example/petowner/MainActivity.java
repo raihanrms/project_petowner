@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     NavigationView navigationView;
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
+    private String profileID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -165,7 +166,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
-
+        // user will get redirected
+        Bundle intent = getIntent().getExtras();
+        if (intent != null){
+            String profileID = intent.getString("currentUserId");
+            /* adding it to shared preferences as it is the only way we can transfer our
+               data from a activity to a fragment on that same activity. */
+            getSharedPreferences("CurrentUserId", MODE_PRIVATE).edit().putString("currentUserId", profileID).apply();
+            getSupportFragmentManager().beginTransaction().replace(R.id.profile , new ProfileFragment()).commit();
+        } else {
+            getSupportFragmentManager().beginTransaction().replace(R.id.search , new SearchFragment()).commit();
+        }
     }
 
     @Override
@@ -173,6 +184,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
       // It's just a text/msg in MainFragment
 
     }
+
     /* Search Fragment */
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
