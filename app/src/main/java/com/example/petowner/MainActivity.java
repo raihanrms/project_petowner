@@ -4,11 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,11 +18,10 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, MainFragment.OnFragmentItemSelectedListener{
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     TextView verifyEmailMsg;
     Button verifyEmailbtn, btnlogout;
@@ -64,15 +61,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
         auth = FirebaseAuth.getInstance();
-
-        //Button for Main Fragment Right now
-        verifyEmailMsg = findViewById(R.id.verifyEmailMsg);
-        verifyEmailbtn = findViewById(R.id.verifyEmailbtn);
-
-        if(!auth.getCurrentUser().isEmailVerified()){
-            verifyEmailbtn.setVisibility(View.VISIBLE);
-            verifyEmailMsg.setVisibility(View.VISIBLE);
-        }
 
         //Load default fragment(MainFragment)
         fragmentManager = getSupportFragmentManager();
@@ -147,50 +135,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawerLayout.closeDrawer(GravityCompat.START); //For closing the drawer
         return true;
     }
-
-    @Override
-    public void onEmailverifyBtnSelected() {
-        //This verifyEmail in the MainFragment
-        verifyEmailbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //send verification message
-                auth.getCurrentUser().sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        Toast.makeText(MainActivity.this, "Verification Email Sent", Toast.LENGTH_SHORT).show();
-                        verifyEmailbtn.setVisibility(View.GONE);
-                        verifyEmailMsg.setVisibility(View.GONE);
-                    }
-                });
-            }
-        });
-
-        // user will get redirected
-        Bundle intent = getIntent().getExtras();
-        if (intent != null){
-            String profileID = intent.getString("currentUserId");
-            /* adding it to shared preferences as it is the only way we can transfer our
-               data from a activity to a fragment on that same activity. */
-            getSharedPreferences("CurrentUserId", MODE_PRIVATE).edit().putString("currentUserId", profileID).apply();
-            getSupportFragmentManager().beginTransaction().replace(R.id.profile , new ProfileFragment()).commit();
-        } else {
-            getSupportFragmentManager().beginTransaction().replace(R.id.search , new SearchFragment()).commit();
-        }
-    }
-
-    @Override
-    public void onEmailverifyMsgSelected() {
-      // It's just a text/msg in MainFragment
-
-    }
-
     /* Search Fragment */
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
         super.onCreate(savedInstanceState, persistentState);
         setContentView(R.layout.fragment_search_view);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        getSupportFragmentManager().beginTransaction().replace(R.id.search,new SearchFragment()).commit();
-    }
+        }
 }

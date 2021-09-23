@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:layout_editor_absoluteX="0dp"
-    tools:layout_editor_absoluteY="-33dp"
-    tools:context="ProfileFragment">
+    android:layout_height="match_parent">
+
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/et_image_profile"
+        android:id="@+id/profile_image"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginTop="92dp"
@@ -20,70 +17,73 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/drawer_background_img" />
+        tools:src="@drawable/ic_launcher_background" />
 
-    <TextView
-        android:id="@+id/et_profile_address"
+    <EditText
+        android:id="@+id/profile_full_name"
         android:layout_width="290dp"
         android:layout_height="40dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="28dp"
         android:background="@drawable/edit_text_background"
         android:ems="10"
-        android:maxLines="1"
-        android:text="Address"
+        android:hint="Full name"
         android:textColor="@color/black"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_profile_phone_no" />
+        app:layout_constraintTop_toBottomOf="@+id/profile_image" />
 
-    <TextView
-        android:id="@+id/et_profile_phone_no"
+    <EditText
+        android:id="@+id/profile_phn_no"
         android:layout_width="290dp"
         android:layout_height="40dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/edit_text_background"
         android:ems="10"
-        android:maxLines="1"
-        android:text="Phone number"
+        android:hint="Phone number"
         android:textColor="@color/black"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_profile_fullname" />
+        app:layout_constraintTop_toBottomOf="@+id/profile_full_name" />
 
-    <TextView
-        android:id="@+id/et_profile_nid"
+    <EditText
+        android:id="@+id/profile_address"
         android:layout_width="290dp"
         android:layout_height="40dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/edit_text_background"
         android:ems="10"
-        android:maxLines="1"
-        android:text="Nid"
+        android:hint="Address"
         android:textColor="@color/black"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_profile_address" />
+        app:layout_constraintTop_toBottomOf="@+id/profile_phn_no" />
 
-    <TextView
-        android:id="@+id/et_profile_fullname"
+    <EditText
+        android:id="@+id/profile_nid"
         android:layout_width="290dp"
         android:layout_height="40dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/edit_text_background"
         android:ems="10"
-        android:maxLines="1"
-        android:text="Full name"
+        android:hint="Nid"
         android:textColor="@color/black"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_image_profile" />
+        app:layout_constraintTop_toBottomOf="@+id/profile_address" />
+
+    <Button
+        android:id="@+id/profile_save_btn"
+        android:layout_width="215dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="44dp"
+        android:text="Save Profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_nid" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,9 +4,6 @@
     package="com.example.petowner">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -16,11 +13,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Petowner">
         <activity
-            android:name=".EditProfileActivity"
-            android:exported="true" />
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".LoginIntro">
+            android:name=".CreateProfile"/>
+        <activity
+            android:name=".RegisterActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LoginActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LoginIntro"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,7 +34,9 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:theme="@style/Theme.Petowner.NoActionBar"></activity>
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Petowner.NoActionBar" />
     </application>
 
 </manifest>

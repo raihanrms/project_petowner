@@ -3,46 +3,5 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    >
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Main Fragment"
-        android:layout_centerInParent="true"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/verifyEmailMsg"
-        android:layout_width="297dp"
-        android:layout_height="28dp"
-        android:layout_marginTop="180dp"
-        android:gravity="center"
-        android:text="Please Verify your Email"
-        android:textColor="@color/black"
-        android:textSize="17sp"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/verifyEmailbtn"
-        android:layout_width="117dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="44dp"
-        android:text="Verify"
-        android:textAllCaps="false"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.462"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/verifyEmailMsg" />
-
-
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 </androidx.constraintlayout.widget.ConstraintLayout>
