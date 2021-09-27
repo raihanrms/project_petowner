@@ -49,6 +49,8 @@ public class DetailsFragment extends Fragment {
         TextView holder_address = v.findViewById(R.id.holder_address);
 
 
+
+
         holder_name.setText(full_name);
         holder_address.setText(address);
         Picasso.get().load(url).into(holder_profile);

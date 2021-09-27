@@ -56,6 +56,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.Viewholder>{
         holder.address.setText(allUserMember.getAddress());
         holder.available.setText(allUserMember.getAvailability());
         holder.price.setText(allUserMember.getPrice());
+        holder.phone_no.setText(allUserMember.getPhone_no());
 
 
 
@@ -146,6 +147,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.Viewholder>{
         public TextView address;
         public TextView available;
         private TextView price;
+        private TextView phone_no;
         public Button btnhire;
 
         public Viewholder(@NonNull View itemView) {
@@ -156,6 +158,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.Viewholder>{
             address = itemView.findViewById(R.id.address);
             available = itemView.findViewById(R.id.availability);
             price = itemView.findViewById(R.id.price);
+            phone_no = itemView.findViewById(R.id.phone_no);
             btnhire = itemView.findViewById(R.id.btn_hire);
         }
 
