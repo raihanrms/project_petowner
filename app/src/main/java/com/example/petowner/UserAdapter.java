@@ -55,6 +55,8 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.Viewholder>{
         holder.full_name.setText(allUserMember.getFull_name());
         holder.address.setText(allUserMember.getAddress());
         holder.available.setText(allUserMember.getAvailability());
+        holder.price.setText(allUserMember.getPrice());
+
 
 
         // if the user doesn't have an image
@@ -143,6 +145,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.Viewholder>{
         public TextView full_name;
         public TextView address;
         public TextView available;
+        private TextView price;
         public Button btnhire;
 
         public Viewholder(@NonNull View itemView) {
@@ -152,7 +155,16 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.Viewholder>{
             full_name = itemView.findViewById(R.id.full_name);
             address = itemView.findViewById(R.id.address);
             available = itemView.findViewById(R.id.availability);
+            price = itemView.findViewById(R.id.price);
             btnhire = itemView.findViewById(R.id.btn_hire);
+        }
+
+        public TextView getPrice() {
+            return price;
+        }
+
+        public void setPrice(TextView price) {
+            this.price = price;
         }
     }
 

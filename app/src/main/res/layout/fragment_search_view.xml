@@ -40,16 +40,19 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-        <androidx.recyclerview.widget.RecyclerView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/recycler_view_users"
-                    android:layout_below="@id/bar"/>
-
             </LinearLayout>
 
         </androidx.core.widget.NestedScrollView>
 
     </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_users"
+        android:layout_width="match_parent"
+        android:layout_height="675dp"
+        android:layout_below="@id/bar"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp" />
 
 </RelativeLayout>

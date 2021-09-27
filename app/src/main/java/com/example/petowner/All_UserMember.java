@@ -8,11 +8,12 @@ public class All_UserMember {
     String url;
     String uid;
     String availability;
+    String price;
 
     public All_UserMember() {
     }
 
-    public All_UserMember(String full_name, String phone_no, String address, String nid, String url, String uid, String availability) {
+    public All_UserMember(String full_name, String phone_no, String address, String nid, String url, String uid, String availability, String price) {
         this.full_name = full_name;
         this.phone_no = phone_no;
         this.address = address;
@@ -20,14 +21,7 @@ public class All_UserMember {
         this.url = url;
         this.uid = uid;
         this.availability = availability;
-    }
-
-    public String getAvailability() {
-        return availability;
-    }
-
-    public void setAvailability(String availability) {
-        this.availability = availability;
+        this.price = price;
     }
 
     public String getFull_name() {
@@ -76,5 +70,21 @@ public class All_UserMember {
 
     public void setUid(String uid) {
         this.uid = uid;
+    }
+
+    public String getAvailability() {
+        return availability;
+    }
+
+    public void setAvailability(String availability) {
+        this.availability = availability;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
     }
 }
