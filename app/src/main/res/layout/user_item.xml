@@ -13,7 +13,7 @@
         tools:ignore="ImageContrastCheck" />
 
     <LinearLayout
-        android:layout_width="110dp"
+        android:layout_width="157dp"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_marginStart="15dp"
@@ -22,7 +22,7 @@
 
         <TextView
             android:id="@+id/full_name"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxLines="1"
             android:text="Full Name"
@@ -40,7 +40,7 @@
 
         <TextView
             android:id="@+id/availability"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Availability"
             android:textColor="@color/black"
