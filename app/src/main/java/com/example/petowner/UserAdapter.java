@@ -50,14 +50,11 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.Viewholder>{
     public void onBindViewHolder(@NonNull Viewholder holder, int position) {
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         All_UserMember allUserMember = mAllUserMembers.get(position);
-        holder.btnhire.setVisibility(View.VISIBLE);
+        holder.btnhire.setVisibility(View.GONE);
 
         holder.full_name.setText(allUserMember.getFull_name());
         holder.address.setText(allUserMember.getAddress());
         holder.available.setText(allUserMember.getAvailability());
-        holder.price.setText(allUserMember.getPrice());
-        holder.phone_no.setText(allUserMember.getPhone_no());
-
 
 
         // if the user doesn't have an image
@@ -73,10 +70,8 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.Viewholder>{
                 AppCompatActivity appCompatActivity = (AppCompatActivity)v.getContext();
                 // fragment_search_view id was bar
                 appCompatActivity.getSupportFragmentManager().beginTransaction().
-                        replace(R.id.bar, new DetailsFragment(allUserMember.getFull_name(),allUserMember.getAddress(),allUserMember.getUrl())).
+                        replace(R.id.bar, new DetailsFragment(allUserMember.getFull_name(),allUserMember.getAddress(),allUserMember.getUrl(),allUserMember.getNid(),allUserMember.getPhone_no(),allUserMember.getAvailability(),allUserMember.getPrice())).
                             addToBackStack(null).commit();
-
-
             }
         });
 
@@ -146,8 +141,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.Viewholder>{
         public TextView full_name;
         public TextView address;
         public TextView available;
-        private TextView price;
-        private TextView phone_no;
+
         public Button btnhire;
 
         public Viewholder(@NonNull View itemView) {
@@ -157,18 +151,9 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.Viewholder>{
             full_name = itemView.findViewById(R.id.full_name);
             address = itemView.findViewById(R.id.address);
             available = itemView.findViewById(R.id.availability);
-            price = itemView.findViewById(R.id.price);
-            phone_no = itemView.findViewById(R.id.phone_no);
             btnhire = itemView.findViewById(R.id.btn_hire);
         }
 
-        public TextView getPrice() {
-            return price;
-        }
-
-        public void setPrice(TextView price) {
-            this.price = price;
-        }
     }
 
     private void addNotification(String allUserMemberUid){

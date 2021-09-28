@@ -7,8 +7,8 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/image_profile"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:src="@mipmap/ic_launcher"
         tools:ignore="ImageContrastCheck" />
 
@@ -36,15 +36,7 @@
             android:maxLines="1"
             android:text="Address"
             android:textColor="@color/black"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/phone_no"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Phone number"
-            android:textColor="@color/black"
-            android:textStyle="bold" />
+            android:textStyle="italic" />
 
         <TextView
             android:id="@+id/availability"
@@ -52,15 +44,7 @@
             android:layout_height="wrap_content"
             android:text="Availability"
             android:textColor="@color/black"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/price"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Price"
-            android:textColor="#4CAF50"
-            android:textStyle="bold" />
+            android:textStyle="italic" />
 
     </LinearLayout>
 

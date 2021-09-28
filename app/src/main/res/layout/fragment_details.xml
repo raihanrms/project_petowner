@@ -7,25 +7,25 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="319dp"
+        android:layout_height="672dp"
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/holder_profile"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_marginTop="25dp"
-            android:src="#1F000000" />
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="50dp"
+            android:src="#1F000000"/>
 
         <TextView
             android:id="@+id/holder_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="30dp"
             android:text="Full Name"
             android:textColor="#000"
-            android:textSize="25sp"
+            android:textSize="26sp"
             android:textStyle="bold" />
 
         <TextView
@@ -35,8 +35,56 @@
             android:layout_marginTop="10dp"
             android:text="Address"
             android:textColor="#000"
-            android:textSize="25sp"
-            android:textStyle="bold" />
+            android:textSize="23sp"
+            android:textStyle="italic"/>
+
+        <TextView
+            android:id="@+id/holder_phone_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Phone Number"
+            android:textColor="#000"
+            android:textSize="23sp"
+            android:textStyle="italic"/>
+
+        <TextView
+            android:id="@+id/holder_nid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="NID"
+            android:textColor="#000"
+            android:textSize="23sp"
+            android:textStyle="italic"/>
+
+        <TextView
+            android:id="@+id/holder_availability"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Availability"
+            android:textColor="#000"
+            android:textSize="23sp"
+            android:textStyle="italic"/>
+
+        <TextView
+            android:id="@+id/holder_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Price"
+            android:textColor="#00C853"
+            android:textSize="23sp"
+            android:textStyle="italic"/>
+
+        <Button
+            android:id="@+id/hire_sitter"
+            android:layout_width="147dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="Hire"
+            android:textSize="20sp"/>
 
 
     </LinearLayout>
